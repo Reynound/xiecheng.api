@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>xiecheng.api</name>
+    </assembly>
+    <members>
+        <member name="M:xiecheng.api.Controllers.TouristRoutePicturesController.GetPicturesByTouristRouteId(System.Guid)">
+            <summary>
+            获取旅游路线图片
+            </summary>
+            <param name="touristRouteiId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xiecheng.api.Controllers.TouristRoutePicturesController.GetPicture(System.Guid,System.Int32)">
+            <summary>
+            查询旅游图片
+            限制路由 二级查询
+            </summary>
+            <param name="touristRouteId"></param>
+            <param name="pictureId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xiecheng.api.Controllers.TouristRoutesController.GetTouristRoutes">
+            <summary>
+            获取全部旅游路线
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:xiecheng.api.Controllers.TouristRoutesController.GetTouristRouteById(System.Guid)">
+            <summary>
+            查询旅游路线
+            </summary>
+            <param name="touristRouteId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:xiecheng.api.Controllers.WeatherForecastController.Get">
+            <summary>
+            get
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:xiecheng.api.DB.AppDBContext">
+            <summary>
+            上下文
+            </summary>
+        </member>
+        <member name="T:xiecheng.api.Dtos.TouristRouteDto">
+            <summary>
+            旅游路线实体
+            </summary>
+        </member>
+        <member name="P:xiecheng.api.Dtos.TouristRouteDto.Price">
+            <summary>
+            展示价格 originPrice * discountPercent
+            </summary>
+        </member>
+        <member name="T:xiecheng.api.Dtos.TouristRoutePictureDto">
+            <summary>
+            旅游路线图片实体
+            </summary>
+        </member>
+        <member name="T:xiecheng.api.Enum.TravelDays">
+            <summary>
+            旅游天数
+            </summary>
+        </member>
+        <member name="T:xiecheng.api.Enum.TripType">
+            <summary>
+            旅游类型
+            </summary>
+        </member>
+        <member name="T:xiecheng.api.Migrations.initialMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:xiecheng.api.Migrations.initialMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:xiecheng.api.Migrations.initialMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:xiecheng.api.Migrations.initialMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:xiecheng.api.Migrations.DataSeeding">
+            <inheritdoc />
+        </member>
+        <member name="M:xiecheng.api.Migrations.DataSeeding.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:xiecheng.api.Migrations.DataSeeding.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:xiecheng.api.Migrations.DataSeeding.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:xiecheng.api.Migrations.JsonData">
+            <inheritdoc />
+        </member>
+        <member name="M:xiecheng.api.Migrations.JsonData.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:xiecheng.api.Migrations.JsonData.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:xiecheng.api.Migrations.JsonData.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:xiecheng.api.Migrations.JsonDataAttach">
+            <inheritdoc />
+        </member>
+        <member name="M:xiecheng.api.Migrations.JsonDataAttach.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:xiecheng.api.Migrations.JsonDataAttach.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:xiecheng.api.Migrations.JsonDataAttach.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:xiecheng.api.Migrations.JsonDataAttachTest">
+            <inheritdoc />
+        </member>
+        <member name="M:xiecheng.api.Migrations.JsonDataAttachTest.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:xiecheng.api.Migrations.JsonDataAttachTest.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:xiecheng.api.Migrations.JsonDataAttachTest.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:xiecheng.api.Modles.TouristRoute">
+            <summary>
+            旅游路线
+            </summary>
+        </member>
+        <member name="P:xiecheng.api.Modles.TouristRoute.TouristRoutePictures">
+            <summary>
+            外键联系
+            </summary>
+        </member>
+        <member name="P:xiecheng.api.Modles.TouristRoutePicture.TouristRoute">
+            <summary>
+            建立外键联系
+            </summary>
+        </member>
+        <member name="T:xiecheng.api.Services.ITouristRouteRepository">
+            <summary>
+            数据仓库接口
+            </summary>
+        </member>
+        <member name="T:xiecheng.api.Services.TouristRouteRepository">
+            <summary>
+            数据仓库
+            </summary>
+        </member>
+    </members>
+</doc>
