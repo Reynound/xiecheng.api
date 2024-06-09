@@ -20,7 +20,7 @@
             <param name="pictureId"></param>
             <returns></returns>
         </member>
-        <member name="M:xiecheng.api.Controllers.TouristRoutesController.GetTouristRoutes(System.String,System.String)">
+        <member name="M:xiecheng.api.Controllers.TouristRoutesController.GetTouristRoutes(xiecheng.api.ResourceParameters.TouristRouteResourceParameters)">
             <summary>
             获取全部旅游路线
             </summary>

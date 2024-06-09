@@ -33,18 +33,18 @@ public class TouristRoutesController : ControllerBase
         //string rating   //lessThan3
         )   //默认[FromQuery]
     {
-        //正则
-        Regex regex = new Regex(@"([A-Za-z0-9\-]+)(\d+)");
-        string op = string.Empty;
-        int value = 0;
-        Match match = regex.Match(param.rating);
-        if (match.Success)
-        {
-            op = match.Groups[1].Value;
-            value = Int32.Parse(match.Groups[2].Value);
-        }
+        // //正则 已放入TouristRouteResourceParameters处理
+        // Regex regex = new Regex(@"([A-Za-z0-9\-]+)(\d+)");
+        // string op = string.Empty;
+        // int value = 0;
+        // Match match = regex.Match(param.Rating);
+        // if (match.Success)
+        // {
+        //     op = match.Groups[1].Value;
+        //     value = Int32.Parse(match.Groups[2].Value);
+        // }
 
-        var data = _touristRouteRepository.getTouristRoutes(param.keyword, op, value);
+        var data = _touristRouteRepository.getTouristRoutes(param.Keyword, param.RatingOperator, param.RatingValue);
 
         var touristRouteDto = _mapper.Map<IEnumerable<TouristRouteDto>>(data);
         if (data == null || data.Count() < 0)

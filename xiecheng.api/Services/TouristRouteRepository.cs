@@ -16,7 +16,7 @@ public class TouristRouteRepository : ITouristRouteRepository
         _context = context;
     }
 
-    public IEnumerable<TouristRoute> getTouristRoutes(string keyword,string op,int value)
+    public IEnumerable<TouristRoute> getTouristRoutes(string keyword,string op,int? value)
     {
         IQueryable<TouristRoute> result = _context
             .TouristRoutes;

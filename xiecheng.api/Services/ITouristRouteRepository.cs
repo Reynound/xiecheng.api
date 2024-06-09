@@ -7,7 +7,7 @@ namespace xiecheng.api.Services;
 /// </summary>
 public interface ITouristRouteRepository
 {
-    IEnumerable<TouristRoute> getTouristRoutes(string keyword,string op,int value);
+    IEnumerable<TouristRoute> getTouristRoutes(string keyword,string op,int? value);
 
     TouristRoute getTouristRoute(Guid touristRouteId);
 
