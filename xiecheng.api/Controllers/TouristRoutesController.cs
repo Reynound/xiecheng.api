@@ -1,6 +1,8 @@
+using System.Text.RegularExpressions;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using xiecheng.api.Dtos;
+using xiecheng.api.ResourceParameters;
 using xiecheng.api.Services;
 
 namespace xiecheng.api.Controllers;
@@ -23,10 +25,26 @@ public class TouristRoutesController : ControllerBase
     /// </summary>
     /// <returns></returns>
     [HttpGet]
-    [HttpHead]  //不在返回数据，只返回状态码等头部信息，没有相应主体，常用于检测缓存（）检测资源是否有效，资源是否存在
-    public IActionResult GetTouristRoutes()
+    [HttpHead]  //不在返回数据，只返回状态码等头部信息，没有相应主体，常用于检测缓存（检测资源是否有效，资源是否存在）
+    // api/touristRoutes?keyword = 参数
+    public IActionResult GetTouristRoutes(
+        [FromQuery] TouristRouteResourceParameters param
+        //[FromQuery] string keyword,
+        //string rating   //lessThan3
+        )   //默认[FromQuery]
     {
-        var data = _touristRouteRepository.getTouristRoutes();
+        //正则
+        Regex regex = new Regex(@"([A-Za-z0-9\-]+)(\d+)");
+        string op = string.Empty;
+        int value = 0;
+        Match match = regex.Match(param.rating);
+        if (match.Success)
+        {
+            op = match.Groups[1].Value;
+            value = Int32.Parse(match.Groups[2].Value);
+        }
+
+        var data = _touristRouteRepository.getTouristRoutes(param.keyword, op, value);
 
         var touristRouteDto = _mapper.Map<IEnumerable<TouristRouteDto>>(data);
         if (data == null || data.Count() < 0)

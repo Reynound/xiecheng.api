@@ -1,3 +1,5 @@
+using xiecheng.api.Modles;
+
 namespace xiecheng.api.Dtos;
 
 /// <summary>
@@ -35,4 +37,6 @@ public class TouristRouteDto
     public string TripType { get; set; }
 
     public string DepartureCity { get; set; }
+
+    public ICollection<TouristRoutePicture> TouristRoutePictures { get; set; }
 }

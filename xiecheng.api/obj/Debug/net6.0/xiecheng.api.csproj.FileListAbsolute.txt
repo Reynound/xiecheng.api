@@ -93,3 +93,4 @@
 /Users/leinuo/Desktop/workspace/Lnet/xiecheng.api/xiecheng.api/bin/Debug/net6.0/Newtonsoft.Json.dll
 /Users/leinuo/Desktop/workspace/Lnet/xiecheng.api/xiecheng.api/bin/Debug/net6.0/AutoMapper.dll
 /Users/leinuo/Desktop/workspace/Lnet/xiecheng.api/xiecheng.api/bin/Debug/net6.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+/Users/leinuo/Desktop/workspace/Lnet/xiecheng.api/xiecheng.api/obj/Debug/net6.0/xiecheng.api.sourcelink.json
