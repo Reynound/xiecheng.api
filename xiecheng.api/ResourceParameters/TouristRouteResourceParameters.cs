@@ -4,13 +4,13 @@ namespace xiecheng.api.ResourceParameters;
 
 public class TouristRouteResourceParameters
 {
-    public string Keyword { get; set; }
+    public string? Keyword { get; set; }
 
-    public string RatingOperator { get; set; }
+    public string? RatingOperator { get; set; }
     public int? RatingValue { get; set; }
     private string _rating;
 
-    public string Rating
+    public string? Rating
     {
         get { return _rating;} //获得_rating的值
         set
