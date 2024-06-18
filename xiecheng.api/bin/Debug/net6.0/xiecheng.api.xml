@@ -33,6 +33,13 @@
             <param name="touristRouteId"></param>
             <returns></returns>
         </member>
+        <member name="M:xiecheng.api.Controllers.TouristRoutesController.CreateTouristRoute(xiecheng.api.Dtos.TouristRouteForCreationDto)">
+            <summary>
+            
+            </summary>
+            <param name="??????"></param>
+            <returns></returns>
+        </member>
         <member name="M:xiecheng.api.Controllers.WeatherForecastController.Get">
             <summary>
             get
@@ -50,6 +57,11 @@
             </summary>
         </member>
         <member name="P:xiecheng.api.Dtos.TouristRouteDto.Price">
+            <summary>
+            展示价格 originPrice * discountPercent
+            </summary>
+        </member>
+        <member name="P:xiecheng.api.Dtos.TouristRouteForCreationDto.Price">
             <summary>
             展示价格 originPrice * discountPercent
             </summary>

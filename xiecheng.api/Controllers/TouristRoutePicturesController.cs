@@ -5,7 +5,7 @@ using xiecheng.api.Services;
 
 namespace xiecheng.api.Controllers;
 
-[Route("api/touristRoutes/{touristRouteId}/pictures")] // api/touistRoutes/xxx/pictures/xxx
+[Route("api/touristRoutes/{touristRouteId}/pictures")] // api/touistRoutes/xxx/pictures/xxx 目的就是为了清晰表达上下级关系
 [ApiController]
 public class TouristRoutePicturesController : ControllerBase
 {
@@ -50,10 +50,7 @@ public class TouristRoutePicturesController : ControllerBase
         if (_touristRouteRepository.TouristRouteExists(touristRouteId)) return NotFound("旅游路线不存在");
 
         var data = _touristRouteRepository.GetPicture(pictureId);
-        if (data == null)
-        { 
-            return NotFound("图片不存在");
-        }
+        if (data == null) return NotFound("图片不存在");
 
         return Ok(data);
     }
