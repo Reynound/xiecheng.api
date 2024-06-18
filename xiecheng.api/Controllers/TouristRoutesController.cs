@@ -2,6 +2,7 @@ using System.Text.RegularExpressions;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using xiecheng.api.Dtos;
+using xiecheng.api.Modles;
 using xiecheng.api.ResourceParameters;
 using xiecheng.api.Services;
 
@@ -60,7 +61,7 @@ public class TouristRoutesController : ControllerBase
     /// </summary>
     /// <param name="touristRouteId"></param>
     /// <returns></returns>
-    [HttpGet("{touristRouteId:Guid}")]
+    [HttpGet("{touristRouteId:Guid} ",Name = "GetTouristRouteById")]    //Name属性可用于reatful风格的api自我发现功能
     // api/touistroutes/{touristRouteId}
     public IActionResult GetTouristRouteById(Guid touristRouteId)
     {
@@ -88,8 +89,28 @@ public class TouristRoutesController : ControllerBase
         {
             return NotFound("无旅游路线");
         }
-        return Ok(data);
+        return Ok(data);    //返回200
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="???"></param>
+    /// <returns></returns>
+    [HttpPost]
+    //api/touristRoutes
+    public IActionResult CreateTouristRoute([FromBody] TouristRouteForCreationDto touristRouteForCreationDto)
+    {
+        var touristRouteModel = _mapper.Map<TouristRoute>(touristRouteForCreationDto);
+        _touristRouteRepository.AddTouristRoute(touristRouteModel);
+        _touristRouteRepository.Save(); //存入数据库
+        var touristRouteToReturn = _mapper.Map<TouristRouteDto>(touristRouteModel);
+        return CreatedAtRoute("GetTouristRouteById",
+            new
+            {
+                touristRouteId = touristRouteModel.Id
+            },
+            touristRouteToReturn); //返回201,且实现一个level3的restful风格api 即Hadoas，定义header的Location，实现api自我发现的功能
+    }
     
 }

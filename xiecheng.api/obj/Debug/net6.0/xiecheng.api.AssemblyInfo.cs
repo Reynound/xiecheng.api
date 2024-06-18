@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("xiecheng.api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d6c4b8f3d766b8a2e09902d893d6313e8758469e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a7c2847d19d47d5821342bffd248226f21740c47")]
 [assembly: System.Reflection.AssemblyProductAttribute("xiecheng.api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("xiecheng.api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

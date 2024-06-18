@@ -9,6 +9,7 @@ public class TouristRoutesProfile : Profile
     public TouristRoutesProfile()
     {
         //默认映射名字相同的字段
+        //前映射后
         CreateMap<TouristRoute, TouristRouteDto>()
             .ForMember(dest => dest.Price,
                 opt => opt.MapFrom(src => src.OriginalPrice * (decimal)(src.DiscountPresent ?? 1)))
@@ -18,5 +19,9 @@ public class TouristRoutesProfile : Profile
                 opt => opt.MapFrom(src => src.TravelDays.ToString()))
             .ForMember(dest => dest.TripType,
                 opt => opt.MapFrom(src => src.TripType.ToString()));
+
+        CreateMap<TouristRouteForCreationDto, TouristRoute>()
+            .ForMember(dest => dest.Id,
+                opt => opt.MapFrom(src => Guid.NewGuid()));
     }
 }
